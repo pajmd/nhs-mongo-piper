@@ -1,0 +1,4 @@
+kafka-python
+requests >= 2.21.0
+pymongo == 3.7.2
+pytest == 4.0.2
