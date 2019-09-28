@@ -4,7 +4,8 @@ import os
 # Kafka
 # pipe
 TOPIC = 'scrapypipe'
-GROUP_ID = 'mongo_feeder'
+MONGO_GROUP_ID = 'mongo_feeder'
+SOLR_GROUP_ID = 'solr_feeder'
 KAFKA_HOST = os.environ.get('KAFKA_HOST', 'localhost')
 KAFKA_BROKERS = ['%s:9092' % KAFKA_HOST]
 
@@ -37,3 +38,7 @@ VALIDATION_SCHEMA =  {
         ]
     }
 }
+
+# SOLR
+SOLR_CLIENT = os.environ.get('SOLR_CLIENT', 'localhost')
+SOLR_PORT = os.environ.get('SOLR_PORT', 8983)

@@ -54,9 +54,9 @@ class DbClient(object):
         operations = []
         for document in documents:
             mutating_document = document.copy()
-            # digest = mutating_document.pop("digest")
-            # if not self.mark_duplicate_document(document):
-            #     operations.append(pymongo.UpdateOne({"digest": digest}, {"$set": mutating_document}, upsert=True))
+            digest = mutating_document.pop("digest")
+            if not self.mark_duplicate_document(document):
+                operations.append(pymongo.UpdateOne({"digest": digest}, {"$set": mutating_document}, upsert=True))
         return operations
 
     def create_index(self, key):
